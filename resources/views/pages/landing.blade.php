@@ -38,7 +38,7 @@
 
 		<h2>Examples</h2>
 		<dl>
-			<dt>Get a listing of all degrees for an individual</dt>
+			<dt>Get all degrees for an individual</dt>
 			<dd><a href="{{ url('degrees?person=steven.fitzgerald@csun.edu') }}">
 				{{ url('degrees?person=steven.fitzgerald@csun.edu') }}
 			</a></dd>
