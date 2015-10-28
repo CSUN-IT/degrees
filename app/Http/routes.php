@@ -14,5 +14,5 @@
 $app->get('degrees', 'DegreesController@getDegrees');
 
 $app->get('/', function () {
-	return "Degrees Webservice";
+	return view('pages.landing');
 });
