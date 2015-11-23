@@ -25,7 +25,7 @@ class DegreesController extends Controller
     	$person = Person::where('email', $email)->first();
     	if(!empty($person)) {
     		$degrees = Degree::where('individuals_id', $person->individuals_id)
-    			->orderBy('year', 'ASC')
+    			->orderBy('year', 'DESC')
     			->get();
     	}
     	else
