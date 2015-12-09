@@ -80,6 +80,8 @@ $app->singleton(
 
 // $app->register(App\Providers\AppServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
+// $app->register('Collective\HTML\HtmlServiceProvider');
+
 
 /*
 |--------------------------------------------------------------------------
