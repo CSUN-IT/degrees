@@ -18,5 +18,5 @@ class Degree extends Model
 	 */
 	protected $primaryKey = 'degrees_id';
 
-	protected $hidden = ['degrees_id', 'individuals_id', 'created_at', 'updated_at'];
+	protected $hidden = ['degrees_id', 'individuals_id', 'is_displayed', 'created_at', 'updated_at'];
 }
