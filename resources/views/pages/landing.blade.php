@@ -55,14 +55,14 @@
 					<dt>Take this URI for example:</dt>
 					<dd>http://degrees.ptg.csun.edu/degrees?</dd>
 
-					<dt>Append a professors email address as the value to the key 'person': </dt>
+					<dt>Append a professor's email address as the value to the key 'person': </dt>
 					<dd>person=steven.fitzgerald@csun.edu</dd>
 
 					<dt>Use the generated URL as a query:</dt>
 					<dd>http://degrees.ptg.csun.edu/degrees?person=steven.fitzgerald@csun.edu</dd>
 
-					<dt>Now, take a look at the possible results of the URL:</dt>
-					<dd>Using your language of choose you can now iterate over the JSON object and use as needed</dd>
+					<dt>Now, take a look at the possible results of query:</dt>
+					<dd>Using your language of choice, you can now iterate over the JSON object and use as needed</dd>
 				</dl>
 				<dl>
 					<dt>Examples of ready to use URL's: Click to see JSON Object</dt>
