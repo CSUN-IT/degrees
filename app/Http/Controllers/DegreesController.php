@@ -22,9 +22,11 @@ class DegreesController extends Controller
     	$email = $request->get('person');
 
     	// grab all degrees with the matching individual
-    	$person = Person::with('degrees')
-            ->where('email', $email)
-            ->first();
+    	$person = Person::with(['degrees' => function($q) {
+            $q->orderBy('year', 'ASC');
+        }])
+        ->where('email', $email)
+        ->first();
 
 		// send the response
 		return $this->sendResponse($person);
