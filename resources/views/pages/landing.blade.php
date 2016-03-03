@@ -22,25 +22,26 @@
 				<div id="json-data">An example of JSON object returned: 
 					<pre>
 						<code class="language-json">
-						[
-									{
-										"degree": "Ph.D.",
-										"year": "2008",
-										"institute": "University of California Los Angeles",
-									},
-
-									{
-										"degree": "M.S.",
-										"year": "2003",
-										"institute": "University of California Los Angeles",
-									},
-
-									{
-										"degree": "B.S.",
-										"year": "2000",
-										"institute": "University of California Los Angeles",
-									}
-						]
+						{
+									appt_year: "1994",
+									degrees: [
+												{
+													"degree": "Ph.D.",
+													"year": "2008",
+													"institute": "University of California Los Angeles",
+												},
+												{
+													"degree": "M.S.",
+													"year": "2003",
+													"institute": "University of California Los Angeles",
+												},
+												{
+													"degree": "B.S.",
+													"year": "2000",
+													"institute": "University of California Los Angeles",
+												}
+									]
+						}
 						</code>
 				</pre>
 				</div>
@@ -104,7 +105,7 @@
 
 								//iterate over the list of data 
 								foreach($data['degrees'] as $degree){
-										 $degree_list = $degree['degree']. '' . $degree['institute'];
+										 $degree_list[] = $degree['degree'] . ' ' . $degree['institute'];
 								}
 								</code>
 							</pre>
@@ -179,7 +180,7 @@
 								degrees_list = []
 
 								#iterate over the json object and add to the degrees list
-								for course in data['degree']:
+								for degree in data['degrees']:
 										 degrees_list.append(degrees['degree'] + ' ' + degrees['institute'])
 
 								print degrees_list
