@@ -8,4 +8,10 @@ class Person extends Model {
 	protected $primaryKey = 'individuals_id';
 	protected $fillable = [];
 
+	// only expose these attributes
+	protected $visible = ['appt_year', 'degrees'];
+
+	public function degrees() {
+		return $this->hasMany('App\Models\Degree', 'individuals_id');
+	}
 }

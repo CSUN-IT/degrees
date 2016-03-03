@@ -22,23 +22,11 @@ class DegreesController extends Controller
     	$email = $request->get('person');
 
     	// grab all degrees with the matching individual
-    	$person = Person::where('email', $email)->first();
-    	if(!empty($person)) {
-    		$degrees = Degree::where('individuals_id', $person->individuals_id)
-                ->where('is_displayed', '1')
-    			->orderBy('year', 'DESC')
-    			->get();
-    	}
-    	else
-    	{
-    		$degrees = new Collection();
-    	}
-
-    	// convert the collection to an array for use in returning the
-		// desired response as JSON
-		$data = $degrees->toArray();
+    	$person = Person::with('degrees')
+            ->where('email', $email)
+            ->first();
 
 		// send the response
-		return $this->sendResponse($data);
+		return $this->sendResponse($person);
     }
 }
