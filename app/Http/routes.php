@@ -14,5 +14,5 @@
 $app->get('degrees', 'DegreesController@getDegrees');
 
 $app->get('/', function () {
-	return view('pages.landing');
+	return view('pages.landing-metaphor');
 });
