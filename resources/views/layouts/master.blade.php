@@ -7,6 +7,7 @@
 	<link rel="icon" type="image/x-icon" href="favicon.ico" type="image/x-icon">
 	<script type="text/javascript" src="https://use.typekit.net/gfb2mjm.js"></script>
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="{!! url('/css/metaphor.css') !!}">
 </head>
 <body>
@@ -28,7 +29,7 @@
 			</div>
 		</div>
 	</div>
-	@include('layouts.partials.csun-footer')
+	{{-- @include('layouts.partials.csun-footer') --}}
 	@include('layouts.partials.metalab-footer')
 	<script type="text/javascript" src="{!! url('/js/metaphor.js') !!}"></script>
 </body>
