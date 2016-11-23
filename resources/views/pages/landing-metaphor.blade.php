@@ -63,7 +63,7 @@
 						</div>
 					</div>
 						<strong>Examples of ready to use URL's: Click to see JSON Object</strong>
-						<ul class="list">
+						<ul class="list--underlined">
 							<li class="list__item">
 								<a href="{{ url('degrees?person=steven.fitzgerald@csun.edu') }}">
 									{!! url('degrees?person=steven.fitzgerald@csun.edu') !!}</a>
