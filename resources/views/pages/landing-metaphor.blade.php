@@ -6,7 +6,7 @@
 	The web service uses HTTP requests to specific URL's and the service returns data in a form of JSON object that contains information including degree, year, and institution.
 	<strong>An example of JSON object returned:</strong>
 <pre>
-	<code class="prettyprint lang-json">
+	<code>
 {
 	appt_year: "1994",
 	degrees: [
@@ -63,7 +63,7 @@
 						</div>
 					</div>
 						<strong>Examples of ready to use URL's: Click to see JSON Object</strong>
-						<ul class="list--underlined">
+						<ul class="list--unstyled">
 							<li class="list__item">
 								<a href="{{ url('degrees?person=steven.fitzgerald@csun.edu') }}">
 									{!! url('degrees?person=steven.fitzgerald@csun.edu') !!}</a>

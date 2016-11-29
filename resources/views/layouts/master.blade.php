@@ -25,10 +25,10 @@
 	<div class="section">
 		<div class="container">
 			<div class="row">
-				<div class="col-sm-3">
+				<div class="col-md-3">
 					@include('layouts.partials.side-nav')
 				</div>
-				<div class="col-sm-9">
+				<div class="col-md-9">
 					@yield('content')
 				</div>
 			</div>
