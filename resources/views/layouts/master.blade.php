@@ -5,11 +5,11 @@
 	<title>Degrees Web Service</title>
 	<link rel="icon" type="image/png" href="favicon.png">
 	<link rel="icon" type="image/x-icon" href="favicon.ico" type="image/x-icon">
-	<script type="text/javascript" src="https://use.typekit.net/gfb2mjm.js"></script>
-	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic">
-	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" type="text/css" href="{!! url('css/metaphor.css') !!}">
-	<link rel="stylesheet" type="text/css" href="{!! url('css/tomorrow.min.css') !!}">
+	<script type="text/javascript" src="//use.typekit.net/gfb2mjm.js"></script>
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic">
+	<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="{{ url('css/metaphor.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url('css/tomorrow.min.css') }}">
 	<style type="text/css">
 		.metalab-footer .metalab-branding img {
 		  width: 110px; }
@@ -36,6 +36,6 @@
 	</div>
 	{{-- @include('layouts.partials.csun-footer') --}}
 	@include('layouts.partials.metalab-footer')
-	<script type="text/javascript" src="{!! url('js/metaphor.js') !!}"></script>
-	<script type="text/javascript" src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
+	<script type="text/javascript" src="{{ url('js/metaphor.js') }}"></script>
+	<script type="text/javascript" src="//cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"></script>
 </body>
