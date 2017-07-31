@@ -16,12 +16,4 @@ class AppServiceProvider extends ServiceProvider
     {
         //
     }
-
-    public function boot(UrlGenerator $url)
-    {
-        if($this->app->environment() !== 'local')
-        {
-            $url->forceSchema('https');
-        }
-    }
 }
