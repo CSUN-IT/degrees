@@ -9,7 +9,7 @@
     <script>try{Typekit.load();}catch(e){}</script>
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic">
 	<link rel="stylesheet" type="text/css" href="{{ url('css/metaphor.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ url('css/tomorrow.min.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url('css/tomorrow.css.min') }}">
 </head>
 <body>
 	<div class="section section--sm">
