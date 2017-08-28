@@ -5,7 +5,7 @@
 	This information is derived through CSUN's catalog. The data is generated through a RESTful API by simply appending a name value pair at the end of a URI. 
 	The web service uses HTTP requests to specific URL's and the service returns data in a form of JSON object that contains information including degree, year, and institution.
 	<strong>An example of JSON object returned:</strong>
-<pre>
+<pre class="prettyprint">
 	<code>
 {
 	appt_year: "1994",
