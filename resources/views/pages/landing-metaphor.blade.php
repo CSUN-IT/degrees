@@ -45,14 +45,14 @@
 					<strong>Append a professor's email address as the value to the key 'person': </strong>
 					<div class="panel">
 						<div class="panel__content">
-						person=steven.fitzgerald@csun.edu
+						person={{$emails['steve']}}
 						</div>
 					</div>
 
 					<strong>Use the generated URL as a query:</strong>
 					<div class="panel">
 						<div class="panel__content">
-						{!! url('/degrees?person=steven.fitzgerald@csun.edu') !!}
+							{!! url('degrees?person='.$emails['steve']) !!}
 						</div>
 					</div>
 
@@ -65,16 +65,16 @@
 						<strong>Examples of ready to use URL's: Click to see JSON Object</strong>
 						<ul class="list--unstyled">
 							<li class="list__item">
-								<a href="{{ url('degrees?person=steven.fitzgerald@csun.edu') }}">
-									{!! url('degrees?person=steven.fitzgerald@csun.edu') !!}</a>
+								<a href="{{ url('degrees?person='.$emails['steve']) }}">
+									{!! url('degrees?person='.$emails['steve']) !!}</a>
 							</li>
 							<li class="list__item">
-								<a href="{{ url('degrees?person=son.pham@csun.edu') }}">
-									{!! url('degrees?person=son.pham@csun.edu') !!}</a>
+								<a href="{{ url('degrees?person='.$emails['son']) }}">
+									{!! url('degrees?person='.$emails['son']) !!}</a>
 							</li>
 							<li class="list__item">
-								<a href="{{ url('degrees?person=rick.covington@csun.edu') }}">
-									{!! url('degrees?person=rick.covington@csun.edu') !!}</a>
+								<a href="{{ url('degrees?person='.$emails['rick']) }}">
+									{!! url('degrees?person='.$emails['rick']) !!}</a>
 							</li>
 						</ul>
 					<h2 id="code-examples" class="type--header type--thin">Code Examples</h2>
@@ -84,7 +84,7 @@
 						<pre>
 					        <code class="prettyprint lang-js">
 //generate a url
-var url = '{!! url('degrees?person=steven.fitzgerald@csun.edu') !!}';
+var url = '{!! url('degrees?person='.$emails['steve']) !!}';
 
 //construct a function to get url and iterate over
 $(document).ready(function() {
@@ -112,7 +112,7 @@ $.get(url, function(data) {
 							<pre>
 								<code class="prettyprint lang-php">
 //generate a url
-$url = '{!! url('degrees?person=steven.fitzgerald@csun.edu') !!}';
+$url = '{!! url('degrees?person='.$emails['steve']) !!}';
 
 //perform the query
 $data = file_get_contents($url);
@@ -139,7 +139,7 @@ import urllib2
 import json
 
 #generate a url
-url = u'{!! url('degrees?person=steven.fitzgerald@csun.edu') !!}'
+url = u'{!! url('degrees?person='.$emails['steve']) !!}'
 
 #open the url
 try:
@@ -170,7 +170,7 @@ require 'net/http'
 require 'json'
 
 #generate a url
-source = '{!! url('degrees?person=steven.fitzgerald@csun.edu') !!}'
+source = '{!! url('degrees?person='.$emails['steve']) !!}'
 
 #request the data
 response = Net::HTTP.get_response(URI.parse(source))

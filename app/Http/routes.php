@@ -14,5 +14,14 @@
 $app->get('degrees', 'DegreesController@getDegrees');
 
 $app->get('/', function () {
-	return view('pages.landing-metaphor');
+    $emails= [
+        'rick' => 'rick.covington@csun.edu',
+        'son' => 'son.pham@csun.edu',
+        'steve' => 'steven.fitzgerald@csun.edu'
+    ];
+    if(env('APP_ENV') === 'local') {
+        foreach($emails as &$email)
+        $email = 'nr_'.$email;
+    }
+	return view('pages.landing-metaphor',compact('emails'));
 });
