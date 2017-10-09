@@ -1,0 +1,23 @@
+language: php
+php:
+- '5.6'
+stages:
+- name: test
+- name: package
+jobs:
+  include:
+  - stage: test
+    before_install:
+    - cp .env.example .env
+    install:
+    - composer install
+  - stage: package
+    script:
+    - composer install
+    - export build_date="$(date '+%y%m%d%H%M%S')"
+    - tar -czf /tmp/${build_date}.tgz --exclude=.git* .
+    - ls -ail /tmp
+    - aws s3 ls s3://csun-metalab-builds/
+env:
+  - secure: vsx8oTgHfcoDkFys4ZSUPNJLIqI4zT/CDSA4Z4vVQVUS5dnf6kASW2T82Lh3ad5YWpLKATQtm/BSRa5hxi1mqzFQxz+TCmTstbrZtkkDL6JQtuNTG7ZT6YSk+cUOYRxQi/QH9MpRuFjrwoKIMwxw130x/IQOe40pZZfupVEi++dunS3OQccRNTmb4DKHj/YITLLdycu8zSYtiSL8cs+RiHYGhyhh9rB12QaZYHLBolmLv1jLaW1Zb/GvBSXGOBn3Fh7rSR2UcmM2QvsVXUDAD7rzfECeUwE5SncpfXba7bDbFNuwaYlkGUir8pNdtAgBO4NbNDhX0viN8UXv4aaPlsY0MUmH5hDMTnmxDw+zJu0IRgZWsoByxdK9eh90EMCB1I0IxJb18FMZbPnb03RG22O0hn0mRgrZZE6xL7DFsbnDsG05+98xC00DTtPQvx1Vz5t5GUGOne2XGz+osOEg0r3DUBW/b9nOkPsxF8WY14ApfVDBYeQTBeIqp/kjF8eS33hRKjeihoybyQWnXWPG2PFrfOJJLSFotKoUP8fZ8oLcqP6KCRSypxPdSIwoQWuC9CoV223k0PEvGwPeME+4AIy3nyIchTJEH+HMss0On4pd+DOPgKjXI8VtcRqYdvtAchozxqMB/pqVuZSPTOdOwwDPHdu6NRa/f0mQErESqMI=
+  - secure: AL54ZF/ZD0AiMkqyB2+wumVPAM8AsdHUX/eAIjFEpYJxLr3JtAxC3ykPbLibF+89wuTKUp+pOOiAN/gfa+7Nvf34qXRPktsphDjE/dzKYhh9BytPhDScyismzsBg+WGd55Qev+BdfeGiOurv/yvyPloySGw8lC+oHAUrzzhh2jFvljCcjIP5yAI71qY6gTaQbyr/cIzeRGxTuGO8KPMRDqrUfpudl0t3ghOGGH/P2GVISLTSC3AM7SksOh+YByebqTyd2bs+L4ddSwpdOyWLFLGf27tbIYTREr4bvJctgFSb2PKXDAN+4Mg3mrFKUiMwD4ekBxVve/XdcUqhl1gInxQPAJqWwpDSA7vI//Z2c/VyxMp2SUHFVUZNUooNQHvuWpc7kCJW2NJepjs0eOGsy4OBqvMeu6ffGC4x+jnYQxN9CWkennVHlKgSZnBgvn7ViTbN07VYYaNZ43YxlK1NhdZjFIc9X8tcRBb3VKlu66XlqqeKGvCYGMTUTqcAvF9utkqAmexaK/W3G7icKQZRb5RQJ/t06xxKq2qYrrL8Rg5QxHeD+YQF9ybMtPEJvAuzTs7S008qMlWxkZvdi/1wjWkA7vePyYuOeiQKsyquGAxNZWZY5nVBcdidfJbgb0Ixt+7oHJCoV5c9c2e346jHCImlNpVlg0jp9Cf0I0iYu3o=
