@@ -16,9 +16,11 @@ jobs:
     - composer install
     - export build_date="$(date '+%y%m%d%H%M%S')"
     - tar -czf /tmp/${build_date}.tgz --exclude=.git* .
-    - ls -ail /tmp
     - pip install --user awscli
-    - "$HOME/.local/bin/aws s3 ls s3://csun-metalab-builds/"
+    - "$HOME/.local/bin/aws  s3 cp /tmp/${build_date}.tgz s3://csun-metalab-builds/degrees/$TRAVIS_BRANCH/${build_date}.tgz"
+    - echo "${build_date}" > /tmp/LATEST 
+    - "$HOME/.local/bin/aws  s3 cp /tmp/latest.txt s3://csun-metalab-builds/degrees/$TRAVIS_BRANCH/LATEST"
+    - "$HOME/.local/bin/aws  s3 ls s3://csun-metalab-builds/degrees/"
 env:
   global:
   - secure: mrhAc4G8MDObA2pOpYSAnQosIzEl4jiZ2koEhvN8IBbFXpvpvnWXPYqhB3FWNSCzlNu5zrYx68cQcNdfwrlL434GCxThwYsk2KeTi+8f1Zx80QvyGV3jfDxDaUMXUtTGyCVw2p+PdN9E+oBmkQLtjXhXLxQvbV4m6jiB0Zdb1phvb5f8C+FClnnWgyGv/L6zGu/i1t85x6hN9ZLZWd+fiIiiNiUFpVKWfoB1L464zwNi8d7Y4foLqr7iXigSW5cU/8f30dMEoZb80oNDkApfmWZyltBr6t9uKS0ikSnlEi8mytqphIVW2g0tdHMibTtu0VBykdOLNw6fxMho6zkZiTqhJIoRKfP8Thb0A9BTWhq9eki7Mx4+drcf8fXL/MEAK1W8+NzHWVogC55ai7tCrbgybTlcbAPdIOHeD+o3p6IEroB9Z2MkfMZLvLuLqND53sGWvZGcmqMlhSsqWigzWdoBJ7usBaA/ysZABUkF5Boi8BccE4A0egpvyex+1H5uau6jok7KhiNh6FdfP9slULSVTMh4uexpqxMzeioy7WofPhrlwps2Q4P4m0Hbj0z0luruTcdoJpJR6wajPuajEWhzdPfSCGfm3f0MhAmK7giLVqI9s4eMTHHrAy/LJhNngOBXQfUJ2b4qKILv1QXB2rnNGCh+ncTECBxDHFxyhLs=
