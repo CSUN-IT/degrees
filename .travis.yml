@@ -4,6 +4,7 @@ php:
 stages:
 - name: test
 - name: package
+  if: branch IN (dev, master, demo)
 jobs:
   include:
   - stage: test
@@ -19,7 +20,7 @@ jobs:
     - pip install --user awscli
     - "$HOME/.local/bin/aws  s3 cp /tmp/${build_date}.tgz s3://csun-metalab-builds/degrees/$TRAVIS_BRANCH/${build_date}.tgz"
     - echo "${build_date}" > /tmp/LATEST 
-    - "$HOME/.local/bin/aws  s3 cp /tmp/latest.txt s3://csun-metalab-builds/degrees/$TRAVIS_BRANCH/LATEST"
+    - "$HOME/.local/bin/aws  s3 cp /tmp/LATEST s3://csun-metalab-builds/degrees/$TRAVIS_BRANCH/LATEST"
     - "$HOME/.local/bin/aws  s3 ls s3://csun-metalab-builds/degrees/"
 env:
   global:
