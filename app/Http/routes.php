@@ -19,7 +19,7 @@ $app->get('/', function () {
         'son' => 'son.pham@csun.edu',
         'steve' => 'steven.fitzgerald@csun.edu'
     ];
-    if(env('APP_ENV') === 'local') {
+    if(env('APP_ENV') !== 'production') {
         foreach($emails as &$email)
         $email = 'nr_'.$email;
     }
