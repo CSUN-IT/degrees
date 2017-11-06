@@ -79,30 +79,26 @@
 						</ul>
 					<h2 id="code-examples" class="type--header type--thin">Code Examples</h2>
 					<dl class="accordion">
-						<dt class="accordion__header"> JavaScript <i class="fa fa-chevron-down fa-pull-right type--red" aria-hidden="true"></i></dt>
+						<dt class="accordion__header"> JQuery <i class="fa fa-chevron-down fa-pull-right type--red" aria-hidden="true"></i></dt>
 						<dd class="accordion__content">
 						<pre>
 					        <code class="prettyprint lang-js">
-//generate a url
-var url = '{!! url('degrees?person='.$emails['steve']) !!}';
-
 //construct a function to get url and iterate over
 $(document).ready(function() {
-
-//use the URL as a request
-$.get(url, function(data) {
-
-  var degreeList = data.degrees;
-  //iterate over the degree list
-  $(degreeList).each(function(index, degree) {
-
-    //append each degree and institute
-    $('#degree-results').append(degree.degree + ' ' + degree.institute);
-
-  });
-
-});
-
+  //generate a url
+  var url = '{!! url('/degrees/degrees?person='.$emails['steve']) !!}';
+  //use the URL as a request
+  $.ajax({
+    url: url
+  }).done(function(data) {
+    // save the degree list
+    var degreeList = data.degrees;
+    //iterate over the degree list
+    $(degreeList).each(function(index, degree) {
+      //append each degree and institute
+      $('#degree-results').append(degree.degree + ' ' + degree.institute + '<br>');
+      });
+    });
 });
 							</code>
 						</pre>
@@ -112,7 +108,7 @@ $.get(url, function(data) {
 							<pre>
 								<code class="prettyprint lang-php">
 //generate a url
-$url = '{!! url('degrees?person='.$emails['steve']) !!}';
+$url = '{!! url('/degrees/degrees?person='.$emails['steve']) !!}';
 
 //perform the query
 $data = file_get_contents($url);
@@ -120,12 +116,9 @@ $data = file_get_contents($url);
 //decode the json
 $data = json_decode($data, true);
 
-//instantiate an empty array
-$degree_list = [];
-
-//iterate over the list of data
+//iterate over the list of data and print
 foreach($data['degrees'] as $degree){
-	$degree_list[] = $degree['degree'] . ' ' . $degree['institute'];
+	echo = $degree['degree'] . ' ' . $degree['institute'].'<br>';
 }
 							</code>
 						</pre>
@@ -139,26 +132,21 @@ import urllib2
 import json
 
 #generate a url
-url = u'{!! url('degrees?person='.$emails['steve']) !!}'
+url = u'{!! url('/degrees/degrees?person='.$emails['steve']) !!}'
 
 #open the url
 try:
-u = urllib2.urlopen(url)
-data = u.read()
+  u = urllib2.urlopen(url)
+  data = u.read()
 except Exception as e:
-data = {}
+  data = {}
 
 #load data with json object
 data = json.loads(data)
 
-degrees_list = []
-
-#iterate over the json object and add to the degrees list
+#iterate over the json object and print
 for degree in data['degrees']:
-degrees_list.append(degrees['degree'] + ' ' + degrees['institute'])
-
-print degrees_list
-
+  print degrees['degree'] + ' ' + degrees['institute']
 								</code>
 							</pre>
 						</dd>
@@ -170,16 +158,20 @@ require 'net/http'
 require 'json'
 
 #generate a url
-source = '{!! url('degrees?person='.$emails['steve']) !!}'
+source = '{!! url('/degrees/degrees?person='.$emails['steve']) !!}'
+
+#prepare the uri
+uri = URI.parse(source)
 
 #request the data
-response = Net::HTTP.get_response(URI.parse(source))
+response = Net::HTTP.get(uri)
 
-#store the response in data variable
-data = response.body
+#parse the json
+degrees = JSON.parse(response)
 
-#put the parsed data
-puts JSON.parse(data)
+#print the json
+degrees['degrees'].each do |degree|
+  puts "#{degree['degree']} #{degree['institute']}"
 							</code>
 						</pre>
 					</dd>
