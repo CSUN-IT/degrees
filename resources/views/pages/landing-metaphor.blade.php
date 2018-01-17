@@ -38,7 +38,7 @@
 					<strong>Take this URI for example:</strong>
 					<div class="panel">
 						<div class="panel__content">
-						{!! url('/degrees?') !!}
+						{!! url('api/degrees?') !!}
 						</div>
 					</div>
 
@@ -52,7 +52,7 @@
 					<strong>Use the generated URL as a query:</strong>
 					<div class="panel">
 						<div class="panel__content">
-							{!! url('degrees?person='.$emails['steve']) !!}
+							{!! url('api/degrees?person='.$emails['steve']) !!}
 						</div>
 					</div>
 
@@ -65,16 +65,16 @@
 						<strong>Examples of ready to use URL's: Click to see JSON Object</strong>
 						<ul class="list--unstyled">
 							<li class="list__item">
-								<a href="{{ url('degrees?person='.$emails['steve']) }}">
-									{!! url('degrees?person='.$emails['steve']) !!}</a>
+								<a href="{{ url('api/degrees?person='.$emails['steve']) }}">
+									{!! url('api/degrees?person='.$emails['steve']) !!}</a>
 							</li>
 							<li class="list__item">
-								<a href="{{ url('degrees?person='.$emails['son']) }}">
-									{!! url('degrees?person='.$emails['son']) !!}</a>
+								<a href="{{ url('api/degrees?person='.$emails['son']) }}">
+									{!! url('api/degrees?person='.$emails['son']) !!}</a>
 							</li>
 							<li class="list__item">
-								<a href="{{ url('degrees?person='.$emails['rick']) }}">
-									{!! url('degrees?person='.$emails['rick']) !!}</a>
+								<a href="{{ url('api/degrees?person='.$emails['rick']) }}">
+									{!! url('api/degrees?person='.$emails['rick']) !!}</a>
 							</li>
 						</ul>
 					<h2 id="code-examples" class="type--header type--thin">Code Examples</h2>
@@ -86,7 +86,7 @@
 //construct a function to get url and iterate over
 $(document).ready(function() {
   //generate a url
-  var url = '{!! url('/degrees/degrees?person='.$emails['steve']) !!}';
+  var url = '{!! url('api/degrees/degrees?person='.$emails['steve']) !!}';
   //use the URL as a request
   $.ajax({
     url: url
@@ -108,7 +108,7 @@ $(document).ready(function() {
 							<pre>
 								<code class="prettyprint lang-php">
 //generate a url
-$url = '{!! url('/degrees/degrees?person='.$emails['steve']) !!}';
+$url = '{!! url('api/degrees/degrees?person='.$emails['steve']) !!}';
 
 //perform the query
 $data = file_get_contents($url);
@@ -132,7 +132,7 @@ import urllib2
 import json
 
 #generate a url
-url = u'{!! url('/degrees/degrees?person='.$emails['steve']) !!}'
+url = u'{!! url('api/degrees/degrees?person='.$emails['steve']) !!}'
 
 #open the url
 try:
@@ -158,7 +158,7 @@ require 'net/http'
 require 'json'
 
 #generate a url
-source = '{!! url('/degrees/degrees?person='.$emails['steve']) !!}'
+source = '{!! url('api/degrees/degrees?person='.$emails['steve']) !!}'
 
 #prepare the uri
 uri = URI.parse(source)
