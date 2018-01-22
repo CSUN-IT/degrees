@@ -18,5 +18,18 @@ class Degree extends Model
 	 */
 	protected $primaryKey = 'degrees_id';
 
-	protected $hidden = ['degrees_id', 'individuals_id', 'is_displayed', 'created_at', 'updated_at'];
+    /**
+     * Specify which attributes we want to hide
+     *
+     * @var array
+     */
+	protected $hidden = [
+	    'degrees_id',
+        'individuals_id',
+        'is_displayed',
+        'longitude',
+        'latitude',
+        'created_at',
+        'updated_at'
+    ];
 }
