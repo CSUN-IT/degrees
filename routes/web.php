@@ -10,7 +10,7 @@ $router->get('/', function () {
         foreach($emails as &$email)
             $email = 'nr_'.$email;
     }
-    return view('pages.landing-metaphor',compact('emails'));
+    return view('pages.landing',compact('emails'));
 });
 
 $router->get('/about/version-history', function () {
