@@ -12,3 +12,7 @@ $router->get('/', function () {
     }
     return view('pages.landing-metaphor',compact('emails'));
 });
+
+$router->get('/about/version-history', function () {
+   return view('pages.about.version-history');
+});
