@@ -9,7 +9,8 @@
         "laravel/lumen-framework": "5.5.*",
         "vlucas/phpdotenv": "~2.2",
         "laravelcollective/html": "^5.1",
-        "csun-metalab/lumen-proxypass": "^1.0"
+        "csun-metalab/lumen-proxypass": "^1.0",
+        "csun-metalab/lumen-force-https": "^1.0"
     },
     "require-dev": {
         "phpunit/phpunit": "~4.0",
