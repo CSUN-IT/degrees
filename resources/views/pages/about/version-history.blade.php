@@ -2,7 +2,7 @@
 
 @section('content')
     <h2 id="introduction" class="type--header type--thin">Version History</h2>
-    <h2>Degrees X.X <small>Release Date: TBD</small></h2>
+    <h2>Degrees 1.0.0 <small>Release Date: 02/06/18</small></h2>
     <p>
         <strong>Improvements:</strong>
         <ol>
