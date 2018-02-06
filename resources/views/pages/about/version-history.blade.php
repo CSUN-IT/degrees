@@ -6,7 +6,8 @@
     <p>
         <strong>Improvements:</strong>
         <ol>
-            <li>Upgrade to Lumen 5.5.</li>
+            <li>Upgrade the underlying code base to the latest version.</li>
+            <li>HTTPS can now be enforced at the application level.</li>
             <li>Include a version history.</li>
         </ol>
     </p>
