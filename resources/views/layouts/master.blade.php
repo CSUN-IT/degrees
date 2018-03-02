@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8" content="width=device-width, initial-scale=1">
-	<title>Degrees Web Service</title>
-	<link rel="icon" type="image/png" href="favicon.png">
-	<link rel="icon" type="image/x-icon" href="favicon.ico" type="image/x-icon">
+	<title>{{ env('APP_NAME') }} Web Service | @yield('title')</title>
+	<link rel="icon" href="//www.csun.edu/sites/default/themes/csun/favicon.ico" type="image/x-icon"/>
 	<script type="text/javascript" src="//use.typekit.net/gfb2mjm.js"></script>
     <script>try{Typekit.load();}catch(e){}</script>
 	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic,700,700italic,800,800italic">
@@ -14,7 +13,7 @@
 <body>
 	<div class="section section--sm">
 		<div class="container type--center">
-			<h1 class="giga type--thin">Degrees Web Service</h1>
+			<h1 class="giga type--thin">{{ env('APP_NAME') }} Web Service</h1>
 			<h3 class="h1 type--thin type--gray">Delivering Degree information about CSUN Faculty</h3>
 		</div>
 	</div>

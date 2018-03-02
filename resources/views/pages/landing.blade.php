@@ -1,7 +1,12 @@
 @extends('layouts.master')
+
+@section('title')
+	Documentation
+@endsection
+
 @section('content')
-	<h2 id="intruduction" class="type--header type--thin">Introduction</h2>
-	The degrees API provides a web service as an interface for requesting information about a professor's degree and institutional background.
+	<h2 id="introduction" class="type--header type--thin">Introduction</h2>
+	The {{ env('APP_NAME') }} web service provides a web service as an interface for requesting information about a professor's degree and institutional background.
 	This information is derived through CSUN's catalog. The data is generated through a RESTful API by simply appending a name value pair at the end of a URI. 
 	The web service uses HTTP requests to specific URL's and the service returns data in a form of JSON object that contains information including degree, year, and institution.
 	<strong>An example of JSON object returned:</strong>
@@ -176,4 +181,4 @@ degrees['degrees'].each do |degree|
 						</pre>
 					</dd>
 					</dl>
-@stop
+@endsection
