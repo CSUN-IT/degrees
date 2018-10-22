@@ -80,7 +80,7 @@
                 {!! url('api/degrees?person='.$emails['rick']) !!}</a>
         </li>
     </ul>
-    <h2 id="code-examples">Code Examples</h2>
+    <h2 id="code-samples">Code Samples</h2>
     <div class="accordion">
         <div class="card">
             <div id="jquery-header" class="card-header">

@@ -21,9 +21,8 @@
         <div id="navbarNavAltMarkup" class="collapse navbar-collapse justify-content-end">
             <div class="navbar-nav text-center d-sm-block d-md-none">
                 <a class="nav-item nav-link" href="{{ url('/#introduction') }}">Introduction</a>
-                <a class="nav-item nav-link" href="{{ url('/#getting-started') }}">Getting Started</a>
-                <a class="nav-item nav-link" href="{{ url('/#collections') }}">Collections</a>
-                <a class="nav-item nav-link" href="{{ url('/#subcollections') }}">Subcollections</a>
+                <a class="nav-item nav-link" href="{{ url('/#how-to-use') }}">How to Use</a>
+                <a class="nav-item nav-link" href="{{ url('/#code-samples') }}">Code Samples</a>
                 <a class="nav-item nav-link" href="{{ url('/about/version-history') }}">Recent Changes</a>
             </div>
         </div>
