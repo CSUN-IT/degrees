@@ -4,6 +4,10 @@
     Documentation
 @endsection
 
+@section('description')
+    {{ env('APP_NAME') }} Web Service Landing Page
+@endsection
+
 @section('content')
     <h2 id="introduction">Introduction</h2>
     The {{ env('APP_NAME') }} web service provides a web service as an interface for requesting information about a professor's degree and institutional background.
@@ -131,7 +135,7 @@ $(document).ready(function() {
 //generate a url
 $url = '{!! url('api/degrees/degrees?person='.$emails['steve']) !!}';
 
-//add extra necessary
+//add extra necessary options
 $arrContextOptions = [
     "ssl" => [
         "verify_peer"=>false,
